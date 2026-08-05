@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
 
 export default function BentoCard({
-  title,
-  description,
-  icon,
   children,
   className = "",
 }) {
@@ -21,7 +18,7 @@ export default function BentoCard({
         rounded-3xl
         border
         border-white/40
-        bg-white/60
+        bg-white/70
         backdrop-blur-xl
         shadow-xl
         hover:shadow-2xl
@@ -30,33 +27,11 @@ export default function BentoCard({
         ${className}
       `}
     >
-      {/* Background Glow */}
-      <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-blue-500/10 blur-3xl transition-all duration-500 group-hover:bg-cyan-400/20" />
+      {/* Glow */}
+      <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan-400/10 blur-3xl transition-all duration-500 group-hover:bg-blue-400/20" />
 
-      <div className="relative z-10 p-7">
-
-        <div className="mb-5 flex items-center gap-3">
-
-          <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 p-3 text-white shadow-lg">
-            {icon}
-          </div>
-
-          <div>
-
-            <h3 className="text-xl font-bold text-slate-900">
-              {title}
-            </h3>
-
-            <p className="text-sm text-slate-500">
-              {description}
-            </p>
-
-          </div>
-
-        </div>
-
+      <div className="relative z-10 p-8">
         {children}
-
       </div>
     </motion.div>
   );
