@@ -13,3 +13,11 @@ body {
 * {
   box-sizing: border-box;
 }
+/* Soft background gradient */
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(59,130,246,.08), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(6,182,212,.08), transparent 35%),
+    #f8fafc;
+}

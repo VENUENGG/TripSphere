@@ -61,10 +61,10 @@ const features = [
 
 export default function Features() {
   return (
-    <section
-      id="features"
-      className="mx-auto mt-32 max-w-7xl px-6"
-    >
+        <section
+       id="features"
+      className="mx-auto mt-40 max-w-7xl px-6"
+        >
       <div className="mb-16 text-center">
 
         <p className="font-semibold uppercase tracking-[4px] text-blue-600">
@@ -72,9 +72,9 @@ export default function Features() {
         </p>
 
         <h2 className="mt-4 text-5xl font-black text-slate-900">
-          Everything Required
+          Everything You Need
           <br />
-          To Plan Your Journey
+          For Every Journey
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
@@ -85,7 +85,7 @@ export default function Features() {
 
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
         {features.map((feature) => (
           <FeatureCard
