@@ -44,7 +44,7 @@ export default function DashboardPreview() {
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="w-[430px] rounded-[32px] border border-white/50 bg-white/80 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.12)] backdrop-blur-xl"
+        className="w-[400px] rounded-[32px] border border-white/50 bg-white/80 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.12)] backdrop-blur-xl"
       >
 
         {/* Header */}

@@ -28,9 +28,9 @@ export default function HeroContent() {
 
       <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600">
 
-        Organize destinations, itineraries, transport,
-        packing lists and budgets inside one modern
-        workspace designed for every traveler.
+        TripSphere brings your itinerary, budget, transport and packing checklist
+        together in one beautiful workspace—so you can spend less time planning and 
+        more time exploring.
 
       </p>
 
