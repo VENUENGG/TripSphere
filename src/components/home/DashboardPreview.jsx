@@ -13,43 +13,53 @@ export default function DashboardPreview() {
   return (
     <div className="relative flex items-center justify-center">
 
-      {/* Floating Card 1 */}
+      {/* Background Glow */}
+
+      <div className="absolute h-[520px] w-[520px] rounded-full bg-gradient-to-br from-cyan-400/20 via-blue-500/10 to-violet-500/20 blur-3xl"></div>
+
+      {/* Floating Cards */}
 
       <FloatingCard
-        className="-left-12 top-10"
+        className="-left-16 top-8"
         icon={<Plane className="text-blue-600" size={22} />}
         title="Flight"
         value="Confirmed"
       />
 
-      {/* Floating Card 2 */}
-
       <FloatingCard
-        className="-right-10 top-40"
-        icon={<Wallet className="text-green-600" size={22} />}
+        className="-right-14 top-36"
+        icon={<Wallet className="text-emerald-600" size={22} />}
         title="Budget"
         value="₹48,000"
       />
 
-      {/* Floating Card 3 */}
-
       <FloatingCard
-        className="bottom-8 left-8"
+        className="-bottom-2 left-8"
         icon={<CloudSun className="text-yellow-500" size={22} />}
         title="Weather"
         value="27° Sunny"
       />
 
+      {/* Dashboard */}
+
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, scale: 0.9, y: 25 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-[400px] rounded-[32px] border border-white/50 bg-white/80 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.12)] backdrop-blur-xl"
+        whileHover={{
+          y: -6,
+          rotateX: 2,
+          rotateY: -2,
+        }}
+        className="relative w-[430px] overflow-hidden rounded-[34px] border border-white/60 bg-white/70 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.14)] backdrop-blur-2xl"
       >
+        {/* Top Glow */}
+
+        <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-cyan-400/20 blur-3xl"></div>
 
         {/* Header */}
 
-        <div className="flex items-center justify-between">
+        <div className="relative flex items-center justify-between">
 
           <div>
 
@@ -57,18 +67,15 @@ export default function DashboardPreview() {
               Trip Dashboard
             </h3>
 
-            <p className="text-slate-500">
+            <p className="mt-1 text-slate-500">
               Bali Adventure
             </p>
 
           </div>
 
-          <div className="rounded-xl bg-blue-100 p-3">
+          <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 p-3 text-white shadow-lg">
 
-            <MapPin
-              className="text-blue-600"
-              size={24}
-            />
+            <MapPin size={22} />
 
           </div>
 
@@ -76,12 +83,12 @@ export default function DashboardPreview() {
 
         {/* Budget */}
 
-        <div className="mt-8">
+        <div className="mt-9">
 
-          <div className="mb-2 flex justify-between">
+          <div className="mb-3 flex justify-between text-sm">
 
-            <span className="font-medium text-slate-700">
-              Budget
+            <span className="font-medium text-slate-600">
+              Budget Used
             </span>
 
             <span className="font-bold text-slate-900">
@@ -90,9 +97,14 @@ export default function DashboardPreview() {
 
           </div>
 
-          <div className="h-3 rounded-full bg-slate-200">
+          <div className="h-3 overflow-hidden rounded-full bg-slate-200">
 
-            <div className="h-3 w-4/5 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "80%" }}
+              transition={{ duration: 1.2 }}
+              className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-400"
+            />
 
           </div>
 
@@ -102,25 +114,30 @@ export default function DashboardPreview() {
 
         <div className="mt-8">
 
-          <div className="mb-2 flex justify-between">
+          <div className="mb-3 flex justify-between">
 
-            <span className="flex items-center gap-2 text-slate-700">
+            <span className="flex items-center gap-2 font-medium text-slate-700">
 
               <Backpack size={18} />
 
-              Packing
+              Packing Progress
 
             </span>
 
-            <span className="font-bold">
+            <span className="font-bold text-slate-900">
               82%
             </span>
 
           </div>
 
-          <div className="h-3 rounded-full bg-slate-200">
+          <div className="h-3 overflow-hidden rounded-full bg-slate-200">
 
-            <div className="h-3 w-[82%] rounded-full bg-gradient-to-r from-violet-500 to-pink-500"></div>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "82%" }}
+              transition={{ duration: 1.4 }}
+              className="h-full rounded-full bg-gradient-to-r from-violet-500 to-pink-500"
+            />
 
           </div>
 
@@ -128,42 +145,53 @@ export default function DashboardPreview() {
 
         {/* Checklist */}
 
-        <div className="mt-8 space-y-4">
+        <div className="mt-9 space-y-3">
 
-          <div className="flex justify-between rounded-xl bg-slate-50 p-4">
+          {[
+            {
+              icon: "✈",
+              title: "Flight",
+              status: "Confirmed",
+              color: "text-green-600",
+            },
+            {
+              icon: "🏨",
+              title: "Hotel",
+              status: "Reserved",
+              color: "text-blue-600",
+            },
+            {
+              icon: "🚆",
+              title: "Transport",
+              status: "Scheduled",
+              color: "text-orange-500",
+            },
+          ].map((item) => (
+            <motion.div
+              key={item.title}
+              whileHover={{
+                x: 4,
+              }}
+              className="flex items-center justify-between rounded-2xl border border-slate-100 bg-white/70 px-5 py-4 transition-all"
+            >
+              <span className="flex items-center gap-3 font-medium text-slate-700">
 
-            <span>✈ Flight</span>
+                <span className="text-lg">
+                  {item.icon}
+                </span>
 
-            <span className="font-semibold text-green-600">
-              Confirmed
-            </span>
+                {item.title}
 
-          </div>
+              </span>
 
-          <div className="flex justify-between rounded-xl bg-slate-50 p-4">
-
-            <span>🏨 Hotel</span>
-
-            <span className="font-semibold text-blue-600">
-              Reserved
-            </span>
-
-          </div>
-
-          <div className="flex justify-between rounded-xl bg-slate-50 p-4">
-
-            <span>🚆 Transport</span>
-
-            <span className="font-semibold text-orange-500">
-              Scheduled
-            </span>
-
-          </div>
+              <span className={`font-semibold ${item.color}`}>
+                {item.status}
+              </span>
+            </motion.div>
+          ))}
 
         </div>
-
       </motion.div>
-
     </div>
   );
 }
