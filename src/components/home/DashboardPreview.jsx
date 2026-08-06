@@ -7,9 +7,11 @@ import {
 } from "lucide-react";
 
 import { motion } from "framer-motion";
+import useWeather from "../../hooks/useWeather";
 import FloatingCard from "./FloatingCard";
 
 export default function DashboardPreview() {
+  const { weather, loading, error } = useWeather("Bali");
   return (
     <div className="relative flex items-center justify-center">
 
@@ -34,11 +36,23 @@ export default function DashboardPreview() {
       />
 
       <FloatingCard
-        className="-bottom-2 left-8"
-        icon={<CloudSun className="text-yellow-500" size={22} />}
-        title="Weather"
-        value="27° Sunny"
-      />
+  className="-bottom-2 left-8"
+  icon={<CloudSun className="text-yellow-500" size={22} />}
+  title={
+    loading
+      ? "Loading..."
+      : error
+      ? "Weather"
+      : weather.city
+  }
+  value={
+    loading
+      ? "--"
+      : error
+      ? "Unavailable"
+      : `${weather.temperature}° ${weather.description}`
+  }
+/>
 
       {/* Dashboard */}
 
