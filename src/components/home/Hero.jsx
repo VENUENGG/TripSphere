@@ -4,7 +4,7 @@ import DashboardPreview from "./DashboardPreview";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-cyan-50">
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-cyan-50">
       <div className="mx-auto grid min-h-[90vh] max-w-7xl items-center gap-16 px-6 py-16 lg:grid-cols-2">
         
         {/* Left Content */}
