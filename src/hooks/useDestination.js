@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { useTrip } from "../context/TripContext";
 import { getCountry } from "../services/countryService";
 
 export default function useDestination() {
-  const [destination, setDestination] = useState(null);
+  const { trip, updateTrip } = useTrip();
 
   async function search(name) {
     try {
       const result = await getCountry(name);
-      setDestination(result);
+
+      updateTrip({
+        destination: name,
+        country: result,
+      });
+
     } catch (error) {
       console.error(error);
-      setDestination(null);
+
+      updateTrip({
+        destination: "",
+        country: null,
+      });
     }
   }
 
   return {
-    destination,
+    destination: trip.country,
     search,
   };
 }
