@@ -77,7 +77,7 @@ export default function CTASection() {
 
             <button className="group flex items-center gap-3 rounded-2xl bg-white px-8 py-4 font-bold text-blue-700 transition hover:scale-105">
 
-              Start Planning
+              Plan My Journey →
 
               <ArrowRight
                 className="transition group-hover:translate-x-1"

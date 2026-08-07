@@ -73,7 +73,7 @@ export default function Navbar() {
             </h2>
 
             <p className="text-xs tracking-[3px] uppercase text-neutral-500">
-              Travel OS
+              Plan • Explore • Experience
             </p>
           </div>
         </a>
@@ -107,7 +107,7 @@ export default function Navbar() {
           className="hidden items-center gap-2 rounded-2xl bg-black px-5 py-3 text-sm font-semibold text-white transition hover:scale-[1.03] lg:flex"
         >
           <Sparkles size={16} />
-          Start Planning
+          Plan My Journey →
         </a>
 
         {/* Mobile */}
@@ -150,7 +150,7 @@ export default function Navbar() {
                 onClick={(e) => go(e, "#workspace")}
                 className="mt-3 flex items-center justify-center rounded-xl bg-black py-3 font-semibold text-white"
               >
-                Start Planning
+                Plan My Journey →
               </a>
             </div>
           </motion.div>
