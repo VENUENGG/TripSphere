@@ -37,13 +37,13 @@ export default function BudgetForm({ onCalculate }) {
     >
       {/* Destination */}
 
-      <div>
+      <div className="rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm">
 
         <label className="mb-3 flex items-center gap-2 font-semibold text-slate-700">
 
           <MapPinned
             size={18}
-            className="text-blue-600"
+            className="text-black"
           />
 
           Destination
@@ -56,7 +56,7 @@ export default function BudgetForm({ onCalculate }) {
           placeholder="Goa, Bali, Dubai..."
           value={form.destination}
           onChange={handleChange}
-          className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-lg outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+          className="w-full rounded-2xl border border-neutral-200 bg-neutral-50 px-5 py-4 text-lg font-medium text-black outline-none transition-all duration-300 focus:border-black focus:bg-white focus:ring-0"
         />
 
       </div>
@@ -65,7 +65,7 @@ export default function BudgetForm({ onCalculate }) {
 
       <div className="grid gap-6 md:grid-cols-2">
 
-        <div>
+        <div className="rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm">
 
           <label className="mb-3 flex items-center gap-2 font-semibold text-slate-700">
 
@@ -89,7 +89,7 @@ export default function BudgetForm({ onCalculate }) {
 
         </div>
 
-        <div>
+        <div className="rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm">
 
           <label className="mb-3 flex items-center gap-2 font-semibold text-slate-700">
 
@@ -117,7 +117,7 @@ export default function BudgetForm({ onCalculate }) {
 
       {/* Travel Style */}
 
-      <div>
+      <div className="rounded-3xl border border-neutral-200 bg-white p-5 shadow-sm">
 
         <label className="mb-3 flex items-center gap-2 font-semibold text-slate-700">
 
@@ -147,9 +147,10 @@ export default function BudgetForm({ onCalculate }) {
 
       <button
         type="submit"
-        className="mt-4 w-full rounded-2xl bg-slate-900 py-5 text-lg font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:shadow-2xl"
+        className="mt-4 w-full rounded-2xl bg-black py-5 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(0,0,0,.18)]"
       >
-        Calculate Travel Budget
+        Generate Budget Report
+        
       </button>
 
     </form>

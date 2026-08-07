@@ -2,112 +2,88 @@ import { Plane } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="mt-40 border-t border-slate-200 bg-white">
-
-      <div className="mx-auto max-w-7xl px-6 py-16">
-
-        <div className="grid gap-12 md:grid-cols-4">
+    <footer className="border-t border-neutral-200 bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="grid gap-14 lg:grid-cols-[1.6fr_1fr_1fr]">
 
           {/* Brand */}
-
-          <div>
-
+          <div className="max-w-md">
             <div className="flex items-center gap-3">
-
-              <div className="rounded-xl bg-blue-600 p-3 text-white">
-                <Plane size={22} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-200 bg-black text-white shadow-sm">
+                <Plane size={18} />
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-xl font-semibold tracking-tight text-black">
                   TripSphere
                 </h3>
 
-                <p className="text-slate-500">
-                  Travel Planner
+                <p className="text-sm text-neutral-500">
+                  Intelligent Travel Planning
                 </p>
               </div>
-
             </div>
 
-            <p className="mt-6 text-slate-600 leading-7">
-              Organize destinations, budgets,
-              itineraries and unforgettable journeys
-              in one beautiful workspace.
+            <p className="mt-6 leading-7 text-neutral-600">
+              Plan memorable journeys with beautifully organized itineraries,
+              smart budgeting, destination discovery, and everything you need
+              for stress-free travel—all in one elegant workspace.
             </p>
-
           </div>
 
-          {/* Product */}
-
+          {/* Explore */}
           <div>
-
-            <h4 className="mb-5 font-bold">
-              Product
+            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-black">
+              Explore
             </h4>
 
-            <div className="space-y-3 text-slate-600">
-
-              <p>Destination Explorer</p>
-              <p>Budget Planner</p>
-              <p>Packing Checklist</p>
-              <p>Trip Timeline</p>
-
-            </div>
-
+            <ul className="space-y-4 text-neutral-600">
+              <li className="transition-colors hover:text-black cursor-pointer">
+                Destination Explorer
+              </li>
+              <li className="transition-colors hover:text-black cursor-pointer">
+                Budget Planner
+              </li>
+              <li className="transition-colors hover:text-black cursor-pointer">
+                Packing Checklist
+              </li>
+              <li className="transition-colors hover:text-black cursor-pointer">
+                Trip Timeline
+              </li>
+            </ul>
           </div>
 
           {/* Company */}
-
           <div>
-
-            <h4 className="mb-5 font-bold">
+            <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-black">
               Company
             </h4>
 
-            <div className="space-y-3 text-slate-600">
-
-              <p>About</p>
-              <p>Features</p>
-              <p>Contact</p>
-              <p>Support</p>
-
-            </div>
-
+            <ul className="space-y-4 text-neutral-600">
+              <li className="transition-colors hover:text-black cursor-pointer">
+                About
+              </li>
+              <li className="transition-colors hover:text-black cursor-pointer">
+                Features
+              </li>
+              <li className="transition-colors hover:text-black cursor-pointer">
+                Contact
+              </li>
+              <li className="transition-colors hover:text-black cursor-pointer">
+                Support
+              </li>
+            </ul>
           </div>
-
-          {/* Social */}
-
-          <div>
-
-            <h4 className="mb-5 font-bold">
-              Connect
-            </h4>
-
-            <div className="flex gap-4">
-
-  <button className="rounded-xl bg-slate-100 px-5 py-3 transition hover:bg-blue-600 hover:text-white">
-    Instagram
-  </button>
-
-  <button className="rounded-xl bg-slate-100 px-5 py-3 transition hover:bg-blue-600 hover:text-white">
-    LinkedIn
-  </button>
-
-</div>
-
-          </div>
-
         </div>
 
-        <div className="mt-16 border-t border-slate-200 pt-8 text-center text-slate-500">
+        <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-neutral-200 pt-8 text-sm text-neutral-500 md:flex-row">
+          <p>© 2026 TripSphere. All rights reserved.</p>
 
-          © 2026 TripSphere • Built for Hackathon 🚀
-
+          <p>
+            Crafted with precision for modern travelers.
+          </p>
         </div>
-
       </div>
-
     </footer>
   );
 }
