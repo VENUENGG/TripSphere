@@ -7,18 +7,15 @@ import FlightSearch from "../components/flights/FlightSearch";
 import FlightList from "../components/flights/FlightList";
 import TripMap from "../components/map/TripMap";
 import CTASection from "../components/home/CTASection";
+import AIJourneyDesigner from "../components/itinerary/AIJourneyDesigner";
 
 import useFlights from "../hooks/useFlights";
 import { useTrip } from "../context/TripContext";
 
 export default function Home() {
-
   const { trip } = useTrip();
 
-  const {
-    flights,
-    search,
-  } = useFlights();
+  const { flights, search } = useFlights();
 
   return (
     <>
@@ -28,21 +25,17 @@ export default function Home() {
 
       <PlannerSection />
 
-      <BudgetPlanner />
-
       <DestinationExplorer />
 
-      <TripMap
-        destination={trip.country}
-      />
+      <TripMap destination={trip.country} />
 
-      <FlightSearch
-        onSearch={search}
-      />
+      <FlightSearch onSearch={search} />
 
-      <FlightList
-        flights={flights}
-      />
+      <FlightList flights={flights} />
+
+      <BudgetPlanner />
+
+      <AIJourneyDesigner />
 
       <CTASection />
     </>

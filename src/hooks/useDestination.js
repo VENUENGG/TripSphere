@@ -8,6 +8,7 @@ export default function useDestination() {
   const { trip, updateTrip } = useTrip();
 
   const [loading, setLoading] = useState(false);
+  
 
   async function search(query) {
     try {

@@ -11,85 +11,88 @@ import useWeather from "../../hooks/useWeather";
 import FloatingCard from "./FloatingCard";
 
 export default function DashboardPreview() {
+
   const { weather, loading, error } = useWeather("Bali");
+
   return (
-    <div className="relative flex items-center justify-center">
-
-      {/* Background Glow */}
-
-      <div className="absolute h-[520px] w-[520px] rounded-full bg-gradient-to-br from-cyan-400/20 via-blue-500/10 to-violet-500/20 blur-3xl"></div>
+    <div className="relative flex justify-center">
 
       {/* Floating Cards */}
 
       <FloatingCard
-        className="-left-16 top-8"
-        icon={<Plane className="text-blue-600" size={22} />}
+        className="-left-14 top-8"
+        icon={<Plane size={18} className="text-slate-900" />}
         title="Flight"
         value="Confirmed"
       />
 
       <FloatingCard
-        className="-right-14 top-36"
-        icon={<Wallet className="text-emerald-600" size={22} />}
+        className="-right-14 top-32"
+        icon={<Wallet size={18} className="text-emerald-600" />}
         title="Budget"
-        value="₹48,000"
+        value="₹48K"
       />
 
       <FloatingCard
-  className="-bottom-2 left-8"
-  icon={<CloudSun className="text-yellow-500" size={22} />}
-  title={
-    loading
-      ? "Loading..."
-      : error
-      ? "Weather"
-      : weather.city
-  }
-  value={
-    loading
-      ? "--"
-      : error
-      ? "Unavailable"
-      : `${weather.temperature}° ${weather.description}`
-  }
-/>
+        className="-bottom-2 left-6"
+        icon={<CloudSun size={18} className="text-amber-500" />}
+        title={
+          loading
+            ? "Loading..."
+            : error
+            ? "Weather"
+            : weather.city
+        }
+        value={
+          loading
+            ? "--"
+            : error
+            ? "Unavailable"
+            : `${weather.temperature}°`
+        }
+      />
 
-      {/* Dashboard */}
+      {/* Main Dashboard */}
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 25 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        whileHover={{
-          y: -6,
-          rotateX: 2,
-          rotateY: -2,
+        initial={{
+          opacity: 0,
+          scale: .92,
         }}
-        className="relative w-[430px] overflow-hidden rounded-[34px] border border-white/60 bg-white/70 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.14)] backdrop-blur-2xl"
+        animate={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: .8,
+        }}
+        whileHover={{
+          y: -5,
+        }}
+        className="relative w-[430px] overflow-hidden rounded-[36px] border border-slate-200 bg-white shadow-[0_35px_90px_rgba(15,23,42,.10)]"
       >
-        {/* Top Glow */}
-
-        <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-cyan-400/20 blur-3xl"></div>
 
         {/* Header */}
 
-        <div className="relative flex items-center justify-between">
+        <div className="border-b border-slate-100 p-7">
 
-          <div>
+          <div className="flex items-center justify-between">
 
-            <h3 className="text-2xl font-bold text-slate-900">
-              Trip Dashboard
-            </h3>
+            <div>
 
-            <p className="mt-1 text-slate-500">
-              Bali Adventure
-            </p>
+              <p className="text-sm uppercase tracking-[3px] text-slate-400">
+                Active Trip
+              </p>
 
-          </div>
+              <h2 className="mt-2 text-3xl font-black">
+                Bali
+              </h2>
 
-          <div className="rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 p-3 text-white shadow-lg">
+            </div>
 
-            <MapPin size={22} />
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900 text-white">
+              <MapPin size={22} />
+            </div>
 
           </div>
 
@@ -97,27 +100,33 @@ export default function DashboardPreview() {
 
         {/* Budget */}
 
-        <div className="mt-9">
+        <div className="p-7">
 
-          <div className="mb-3 flex justify-between text-sm">
+          <div className="mb-3 flex justify-between">
 
-            <span className="font-medium text-slate-600">
-              Budget Used
+            <span className="font-semibold text-slate-600">
+              Budget
             </span>
 
-            <span className="font-bold text-slate-900">
+            <span className="font-bold">
               ₹48,000
             </span>
 
           </div>
 
-          <div className="h-3 overflow-hidden rounded-full bg-slate-200">
+          <div className="h-2 overflow-hidden rounded-full bg-slate-200">
 
             <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "80%" }}
-              transition={{ duration: 1.2 }}
-              className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-400"
+              initial={{
+                width: 0,
+              }}
+              animate={{
+                width: "78%",
+              }}
+              transition={{
+                duration: 1,
+              }}
+              className="h-full rounded-full bg-slate-900"
             />
 
           </div>
@@ -126,31 +135,37 @@ export default function DashboardPreview() {
 
         {/* Packing */}
 
-        <div className="mt-8">
+        <div className="px-7">
 
           <div className="mb-3 flex justify-between">
 
-            <span className="flex items-center gap-2 font-medium text-slate-700">
+            <span className="flex items-center gap-2 font-semibold">
 
-              <Backpack size={18} />
+              <Backpack size={17} />
 
-              Packing Progress
+              Packing
 
             </span>
 
-            <span className="font-bold text-slate-900">
+            <span className="font-bold">
               82%
             </span>
 
           </div>
 
-          <div className="h-3 overflow-hidden rounded-full bg-slate-200">
+          <div className="h-2 overflow-hidden rounded-full bg-slate-200">
 
             <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "82%" }}
-              transition={{ duration: 1.4 }}
-              className="h-full rounded-full bg-gradient-to-r from-violet-500 to-pink-500"
+              initial={{
+                width: 0,
+              }}
+              animate={{
+                width: "82%",
+              }}
+              transition={{
+                duration: 1.2,
+              }}
+              className="h-full rounded-full bg-emerald-500"
             />
 
           </div>
@@ -159,53 +174,55 @@ export default function DashboardPreview() {
 
         {/* Checklist */}
 
-        <div className="mt-9 space-y-3">
+        <div className="space-y-4 p-7">
 
           {[
             {
-              icon: "✈",
+              icon: "✈️",
               title: "Flight",
               status: "Confirmed",
-              color: "text-green-600",
             },
             {
               icon: "🏨",
               title: "Hotel",
-              status: "Reserved",
-              color: "text-blue-600",
+              status: "Booked",
             },
             {
-              icon: "🚆",
+              icon: "🚖",
               title: "Transport",
-              status: "Scheduled",
-              color: "text-orange-500",
+              status: "Ready",
             },
           ].map((item) => (
-            <motion.div
+
+            <div
               key={item.title}
-              whileHover={{
-                x: 4,
-              }}
-              className="flex items-center justify-between rounded-2xl border border-slate-100 bg-white/70 px-5 py-4 transition-all"
+              className="flex items-center justify-between rounded-2xl bg-slate-50 px-5 py-4 transition hover:bg-slate-100"
             >
-              <span className="flex items-center gap-3 font-medium text-slate-700">
+
+              <div className="flex items-center gap-3">
 
                 <span className="text-lg">
                   {item.icon}
                 </span>
 
-                {item.title}
+                <span className="font-semibold">
+                  {item.title}
+                </span>
 
-              </span>
+              </div>
 
-              <span className={`font-semibold ${item.color}`}>
+              <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-700">
                 {item.status}
               </span>
-            </motion.div>
+
+            </div>
+
           ))}
 
         </div>
+
       </motion.div>
+
     </div>
   );
 }

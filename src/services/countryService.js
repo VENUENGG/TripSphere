@@ -21,7 +21,7 @@ export async function getCountry(name) {
   }
 
   const country = data[0];
-console.log(country);
+
   return {
     name: {
       common: country.name,
