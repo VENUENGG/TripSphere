@@ -47,8 +47,9 @@ export default function TripMap({ destination }) {
 
       try {
         const coords = await getCoordinates(
-          destination.capital?.[0] ||
-          destination.name.common
+         destination.city ||
+         destination.capital?.[0] ||
+         destination.name.common
         );
 
         setPosition(coords);

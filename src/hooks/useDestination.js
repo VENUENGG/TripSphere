@@ -1,53 +1,47 @@
 import { useState } from "react";
-import { getCountry } from "../services/countryService";
-import { getDestinationImage } from "../services/imageService";
 import { useTrip } from "../context/TripContext";
+import { getCountry } from "../services/countryService";
+import { getLocation } from "../services/locationService";
+import { getDestinationImage } from "../services/imageService";
 
 export default function useDestination() {
   const { trip, updateTrip } = useTrip();
 
   const [loading, setLoading] = useState(false);
 
-  async function search(name) {
-    if (!name.trim()) return;
-
-    setLoading(true);
-
+  async function search(query) {
     try {
-      let country = null;
-let image = null;
+      setLoading(true);
 
-try {
-  country = await getCountry(name);
-} catch (e) {
-  console.error("Country Error:", e);
-}
+      // Find city + country
+      const location = await getLocation(query);
 
-try {
-  image = await getDestinationImage(name);
-} catch (e) {
-  console.error("Image Error:", e);
-}
+      // Country information
+      const country = await getCountry(location.country);
 
-updateTrip({
-  destination: name,
-  country,
-  image,
-});
+      // Extra information
+      country.city = location.city;
+      country.latlng = location.latlng;
 
+      // Unsplash image
+      const image = await getDestinationImage(query);
+
+      // Save EVERYTHING in one update
       updateTrip({
-        destination: name,
+        destination: query,
         country,
         image,
       });
+
     } catch (err) {
-      console.error(err);
+      console.error("Destination Error:", err);
 
       updateTrip({
-        destination: name,
+        destination: "",
         country: null,
         image: null,
       });
+
     } finally {
       setLoading(false);
     }

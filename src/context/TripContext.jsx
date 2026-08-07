@@ -6,9 +6,9 @@ export function TripProvider({ children }) {
  const [trip, setTrip] = useState({
   destination: "",
   country: null,
-  image: null,
   weather: null,
   budget: null,
+  image: null,
 });
 
   function updateTrip(data) {
