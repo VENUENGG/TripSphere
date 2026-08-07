@@ -16,6 +16,9 @@ import FlightList from "../flights/FlightList";
 import AIJourneyDesigner from "../itinerary/AIJourneyDesigner";
 
 import useFlights from "../../hooks/useFlights";
+import PlanTrip from "../planner/PlanTrip";
+
+<PlanTrip />
 
 const tabs = [
   {

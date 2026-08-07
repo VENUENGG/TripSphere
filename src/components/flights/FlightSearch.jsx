@@ -137,6 +137,12 @@ export default function FlightSearch({ onSearch }) {
             Search Flights
 
           </button>
+          <p className="mt-5 text-center text-sm text-slate-500">
+  💡 Use airport codes for best results
+  <span className="block mt-1 font-medium">
+    BOM • DEL • GOI • BLR • HYD • DXB • NRT
+  </span>
+</p>
 
         </div>
 

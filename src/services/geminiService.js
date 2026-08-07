@@ -5,10 +5,10 @@ const ai = new GoogleGenAI({
 });
 
 export async function generateItinerary(form) {
-  const prompt = `
-You are an expert luxury travel planner.
+ const prompt = `
+You are TripSphere AI, an elite luxury travel planner.
 
-Generate a COMPLETE travel itinerary.
+Generate a COMPLETE personalized travel plan.
 
 Return ONLY VALID JSON.
 
@@ -31,11 +31,48 @@ Arrival Time: ${form.arrivalTime}
 Interests:
 ${form.interests.join(", ")}
 
-Return this EXACT structure:
+Return this EXACT JSON structure:
 
 {
   "tripTitle":"",
   "summary":"",
+
+  "packingChecklist":[
+    ""
+  ],
+
+  "travelEssentials":[
+    ""
+  ],
+
+  "documents":[
+    ""
+  ],
+
+  "healthKit":[
+    ""
+  ],
+
+  "weatherAdvice":[
+    ""
+  ],
+
+  "destinationAdvice":[
+    ""
+  ],
+
+  "localApps":[
+    ""
+  ],
+
+  "currencyTips":[
+    ""
+  ],
+
+  "emergencyNumbers":[
+    ""
+  ],
+
   "days":[
     {
       "day":1,
@@ -54,6 +91,44 @@ Return this EXACT structure:
     }
   ]
 }
+
+Instructions:
+
+- Keep the existing itinerary format exactly the same.
+- Create a detailed summary.
+- Create a realistic day-by-day itinerary.
+- Suggest activities according to budget.
+- Suggest transport between locations.
+- Suggest realistic estimated costs.
+
+Packing Checklist:
+Generate destination and weather specific packing items.
+
+Travel Essentials:
+Include reusable water bottle, power bank, charger, adapter, backpack, luggage lock, neck pillow and other useful accessories.
+
+Documents:
+Include every required travel document.
+
+Health Kit:
+Suggest medicines and first-aid items.
+
+Weather Advice:
+Give practical weather tips.
+
+Destination Advice:
+Give useful local recommendations and cultural tips.
+
+Local Apps:
+Recommend useful local apps like transport, maps, food delivery or payments.
+
+Currency Tips:
+Explain useful money-saving tips.
+
+Emergency Numbers:
+Provide important emergency contacts for the destination.
+
+Return ONLY valid JSON.
 `;
 
   try {
