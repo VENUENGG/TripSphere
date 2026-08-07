@@ -3,12 +3,13 @@ import { createContext, useContext, useState } from "react";
 const TripContext = createContext();
 
 export function TripProvider({ children }) {
-  const [trip, setTrip] = useState({
-    destination: "",
-    country: null,
-    weather: null,
-    budget: null,
-  });
+ const [trip, setTrip] = useState({
+  destination: "",
+  country: null,
+  image: null,
+  weather: null,
+  budget: null,
+});
 
   function updateTrip(data) {
     setTrip((prev) => ({

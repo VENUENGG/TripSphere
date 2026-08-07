@@ -6,10 +6,12 @@ import useDestination from "../../hooks/useDestination";
 export default function DestinationExplorer() {
   const [query, setQuery] = useState("Bali");
 
-  const {
-    destination,
-    search,
-  } = useDestination();
+ const {
+  destination,
+  image,
+  loading,
+  search,
+} = useDestination();
 
   return (
     <section className="mx-auto mt-40 max-w-7xl px-6">
@@ -34,9 +36,11 @@ export default function DestinationExplorer() {
 
       <div className="mt-12">
 
-        <DestinationCard
-          destination={destination}
-        />
+       <DestinationCard
+    destination={destination}
+    image={image}
+    loading={loading}
+/>
 
       </div>
 

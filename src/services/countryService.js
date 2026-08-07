@@ -1,6 +1,13 @@
+const API_KEY = import.meta.env.VITE_API_NINJAS_KEY;
+
 export async function getCountry(name) {
   const response = await fetch(
-    `https://restcountries.com/v3.1/name/${name}?fullText=false`
+    `https://api.api-ninjas.com/v1/country?name=${encodeURIComponent(name)}`,
+    {
+      headers: {
+        "X-Api-Key": API_KEY,
+      },
+    }
   );
 
   if (!response.ok) {
@@ -9,5 +16,29 @@ export async function getCountry(name) {
 
   const data = await response.json();
 
-  return data[0];
+  if (!data.length) {
+    throw new Error("Country not found");
+  }
+
+  const country = data[0];
+
+  return {
+    name: {
+      common: country.name,
+    },
+    capital: [country.capital],
+    region: country.region,
+    population: country.population,
+    currencies: {
+      main: {
+        name: country.currency.name,
+      },
+    },
+    languages: {
+      main: country.language?.join(", ") || "Unknown",
+    },
+    flags: {
+      svg: "",
+    },
+  };
 }
