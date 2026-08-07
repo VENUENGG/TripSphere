@@ -15,6 +15,7 @@ export default function DestinationCard({
 
   if (!destination) return null;
 
+  console.log(destination);
   return (
     <div className="overflow-hidden rounded-3xl bg-white shadow-2xl">
 
@@ -70,13 +71,20 @@ export default function DestinationCard({
           }
         />
 
+         
+  <Row
+    title="🗣 Language"
+    value={destination.languages.main}
+  />
+ {destination.languages?.main &&
+ destination.languages.main !== "Unknown" && (
         <Row
           title="🗣 Language"
           value={
             Object.values(destination.languages || {}).join(", ")
           }
         />
-
+ )}
       </div>
 
     </div>
