@@ -4,7 +4,6 @@ import {
   Wallet,
   Backpack,
   Calendar,
-  Plane,
   LayoutDashboard,
   Check,
 } from "lucide-react";
@@ -131,8 +130,8 @@ export default function Features() {
             <div className="mt-5 space-y-2 text-sm">
 
               <div className="flex justify-between">
-                <span>Flights</span>
-                <span>₹18K</span>
+                <span>Transport</span>
+                <span>₹12K</span>
               </div>
 
               <div className="flex justify-between">

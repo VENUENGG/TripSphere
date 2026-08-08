@@ -3,7 +3,6 @@ import {
   Compass,
   LayoutDashboard,
   Map,
-  Plane,
   Wallet,
   Sparkles,
   Menu,
@@ -21,11 +20,6 @@ const navItems = [
     title: "Explore",
     href: "#workspace",
     icon: Map,
-  },
-  {
-    title: "Flights",
-    href: "#workspace",
-    icon: Plane,
   },
   {
     title: "Budget",
@@ -53,8 +47,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-5 z-50 px-5">
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-neutral-200 bg-white/85 px-6 py-4 shadow-[0_15px_50px_rgba(0,0,0,.06)] backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-5 sm:px-5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/70 bg-white/85 px-4 py-3 shadow-[0_15px_50px_rgba(0,0,0,.06)] backdrop-blur-xl sm:px-6 sm:py-4 backdrop-blur-xl">
 
         {/* Logo */}
 

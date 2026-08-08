@@ -1,4 +1,4 @@
-import { Plane } from "lucide-react";
+import { Compass } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="max-w-md">
             <div className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-neutral-200 bg-black text-white shadow-sm">
-                <Plane size={18} />
+                <Compass size={18} />
               </div>
 
               <div>

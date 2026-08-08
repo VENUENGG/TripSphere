@@ -236,7 +236,7 @@ export default function BudgetResult({ result }) {
 
         <div className="space-y-3 text-neutral-600">
 
-          <p>✓ Book flights 4–6 weeks in advance.</p>
+          <p>✓ Reserve major transport and stays early when your dates are fixed.</p>
 
           <p>✓ Reserve hotels early for better prices.</p>
 

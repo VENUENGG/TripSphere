@@ -1,7 +1,6 @@
 import {
   CalendarDays,
   Compass,
-  Plane,
   Wallet,
   Sparkles,
   CloudSun,
@@ -25,10 +24,6 @@ export default function DashboardPreview() {
       subtitle: "Find destinations",
     },
     {
-      icon: Plane,
-      title: "Flights",
-      subtitle: "Compare fares",
-    },
     {
       icon: Wallet,
       title: "Budget",
@@ -41,7 +36,7 @@ export default function DashboardPreview() {
       initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className="w-[430px] overflow-hidden rounded-[34px] border border-neutral-200 bg-white shadow-[0_40px_90px_rgba(0,0,0,.08)]"
+      className="w-full max-w-[430px] overflow-hidden rounded-[34px] border border-white/70 bg-white/95 shadow-[0_40px_90px_rgba(15,23,42,.18)] backdrop-blur-xl"
     >
       {/* Window Bar */}
 

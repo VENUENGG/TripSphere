@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Compass,
-  Plane,
   MapPinned,
   Luggage,
 } from "lucide-react";
@@ -21,11 +20,6 @@ export default function CTASection() {
         <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl" />
 
         {/* Floating Icons */}
-
-        <Plane
-          className="absolute left-12 top-12 text-white/20"
-          size={70}
-        />
 
         <Compass
           className="absolute right-16 top-16 text-white/20"

@@ -6,61 +6,49 @@ import { motion } from "framer-motion";
 export default function HeroContent() {
   return (
     <div>
-
       <motion.div
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: .5 }}
-        className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-5 py-2 shadow-sm"
+        transition={{ duration: 0.5 }}
+        className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2 shadow-lg backdrop-blur-md"
       >
-        <Sparkles size={15} className="text-black" />
-
-        <span className="text-sm font-semibold text-neutral-700">
-          Intelligent Travel Workspace
-        </span>
+        <Sparkles size={15} />
+        <span className="text-sm font-semibold">Intelligent Travel Workspace</span>
       </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: .7 }}
-        className="mt-8 text-6xl font-black leading-[1.02] tracking-tight text-black lg:text-7xl"
+        transition={{ duration: 0.7 }}
+        className="mt-8 max-w-3xl text-5xl font-black leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-7xl"
       >
-        Plan Every
+        Your journey,
         <br />
-        Journey From
+        beautifully
         <br />
-        <span className="text-neutral-400">
-          One Workspace.
-        </span>
+        <span className="text-white/55">planned.</span>
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: .8 }}
-        className="mt-8 max-w-xl text-xl leading-9 text-neutral-600"
+        transition={{ duration: 0.8 }}
+        className="mt-7 max-w-xl text-base leading-7 text-white/85 sm:text-xl sm:leading-8"
       >
-        Stop switching between websites. Search destinations,
-        compare flights, manage budgets and generate AI itineraries
-        inside one seamless travel planning experience.
+        Discover destinations, shape your route, manage your budget and generate
+        a complete AI itinerary — all inside one immersive travel workspace.
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: .9 }}
+        transition={{ duration: 0.9 }}
         className="mt-8 flex flex-wrap gap-3"
       >
-        {[
-          "Trip Planning",
-          "Destination Explorer",
-          "Flight Search",
-          "Budget Planner",
-        ].map((item) => (
+        {["AI Itinerary", "Journey Map", "Budget Planner", "Destination Explorer"].map((item) => (
           <div
             key={item}
-            className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 shadow-sm"
+            className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md"
           >
             <CheckCircle2 size={15} />
             {item}
@@ -72,7 +60,7 @@ export default function HeroContent() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="mt-12"
+        className="mt-10"
       >
         <HeroButtons />
       </motion.div>
@@ -81,11 +69,10 @@ export default function HeroContent() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.1 }}
-        className="mt-14"
+        className="mt-12"
       >
         <HeroStats />
       </motion.div>
-
     </div>
   );
 }

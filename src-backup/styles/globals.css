@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #f8f8f6;
+  --surface: #ffffff;
+  --border: #e7e7e5;
+
+  --primary: #2563eb;
+
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --shadow: rgba(15, 23, 42, 0.08);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+
+  font-family: "Inter", sans-serif;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(255,255,255,.95) 0%,
+      transparent 45%),
+    radial-gradient(circle at bottom right,
+      rgba(241,245,249,.8) 0%,
+      transparent 45%),
+    #f8f8f6;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.glass {
+  background: rgba(255,255,255,.82);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,.65);
+
+  box-shadow:
+    0 12px 40px rgba(15,23,42,.06);
+}
+
+.hover-card {
+  transition:
+    transform .35s,
+    box-shadow .35s;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 28px 60px rgba(15,23,42,.10);
+}
+
+.gradient-text {
+  color: #0f172a;
+  background: none;
+  -webkit-text-fill-color: unset;
+}

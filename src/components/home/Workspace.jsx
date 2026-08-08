@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   CalendarDays,
   Map,
-  Plane,
   Wallet,
   Sparkles,
 } from "lucide-react";
@@ -11,14 +10,8 @@ import {
 import PlannerSection from "./PlannerSection";
 import DestinationExplorer from "../destination/DestinationExplorer";
 import BudgetPlanner from "../planner/BudgetPlanner";
-import FlightSearch from "../flights/FlightSearch";
-import FlightList from "../flights/FlightList";
 import AIJourneyDesigner from "../itinerary/AIJourneyDesigner";
 
-import useFlights from "../../hooks/useFlights";
-import PlanTrip from "../planner/PlanTrip";
-
-<PlanTrip />
 
 const tabs = [
   {
@@ -32,12 +25,6 @@ const tabs = [
     title: "Explore",
     icon: Map,
     description: "Discover destinations",
-  },
-  {
-    id: "flights",
-    title: "Flights",
-    icon: Plane,
-    description: "Search flights",
   },
   {
     id: "budget",
@@ -55,12 +42,11 @@ const tabs = [
 
 export default function Workspace() {
   const [active, setActive] = useState("planner");
-  const { flights, search } = useFlights();
 
   return (
    <section
   id="workspace"
-  className="mx-auto mt-10 max-w-7xl px-6 pb-24"
+  className="mx-auto mt-10 max-w-7xl px-4 pb-20 sm:px-6 lg:px-8"
 >
 
       <div className="mb-14 text-center">
@@ -82,7 +68,7 @@ export default function Workspace() {
 
       </div>
 
-      <div className="mb-12 grid gap-5 md:grid-cols-5">
+      <div className="mb-8 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
 
         {tabs.map((item) => {
           const Icon = item.icon;
@@ -133,13 +119,6 @@ export default function Workspace() {
             {active === "planner" && <PlannerSection />}
 
             {active === "explore" && <DestinationExplorer />}
-
-            {active === "flights" && (
-              <>
-                <FlightSearch onSearch={search} />
-                <FlightList flights={flights} />
-              </>
-            )}
 
             {active === "budget" && <BudgetPlanner />}
 
