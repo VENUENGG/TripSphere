@@ -53,7 +53,7 @@ export default function BudgetForm({ onCalculate }) {
         <input
           type="text"
           name="destination"
-          placeholder="Goa, Bali, Dubai..."
+          placeholder="Goa, Bali, Dubai, Paris..."
           value={form.destination}
           onChange={handleChange}
           className="w-full rounded-2xl border border-neutral-200 bg-neutral-50 px-5 py-4 text-lg font-medium text-black outline-none transition-all duration-300 focus:border-black focus:bg-white focus:ring-0"
@@ -149,7 +149,7 @@ export default function BudgetForm({ onCalculate }) {
         type="submit"
         className="mt-4 w-full rounded-2xl bg-black py-5 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_45px_rgba(0,0,0,.18)]"
       >
-        Generate Budget Report
+        Build My Travel Budget
         
       </button>
 

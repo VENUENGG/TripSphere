@@ -106,7 +106,7 @@ export default function BudgetPlanner() {
             </h3>
 
             <p className="mt-2 text-slate-500">
-              AI estimated travel expenses.
+              Destination-aware travel estimate.
             </p>
 
           </div>
