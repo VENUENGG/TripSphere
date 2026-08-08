@@ -52,17 +52,20 @@ export default function JourneyTimeline({
   const [mapStops, setMapStops] = useState([]);
   const [mapLoading, setMapLoading] = useState(false);
 
-    useEffect(() => {
+   useEffect(() => {
   if (!loading && itinerary) {
     requestAnimationFrame(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: "auto",
-      });
+      const journeyMap = document.getElementById("journey-map-section");
+
+      if (journeyMap) {
+        journeyMap.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     });
   }
 }, [loading, itinerary]);
-
   /*
    * Build the map route from:
    *
@@ -253,7 +256,10 @@ export default function JourneyTimeline({
       {/* COMPLETE JOURNEY MAP */}
 
       {itineraryMapStops.length > 0 && (
-        <div className="mt-14">
+  <div
+    id="journey-map-section"
+    className="mt-14"
+  >
 
           <div className="mb-7">
 
